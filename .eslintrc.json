@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    // config preact - optinally airbnb
+    "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "preact"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        // typescript rules
+        "@typescript-eslint/no-var-requires": "warn",
+
+        // preact same the react rules
+        "react/self-closing-comp": ["error", {
+            "component": true,
+            "html": true
+        }]
+    },
+    // set config trap, if you dont use jest
+    "settings": {
+        "jest": {
+            "version": 26
+        }
+    },
+    // ignore selected files and directories
+    "ignorePatterns":["src/assets/ab-particles.min.js","src/preact.d.ts", "src/vite-env.d.ts", "dist"]
+    // "lint.fix":"eslint --fix src/**/*.{ts,tsx}"
+
+}

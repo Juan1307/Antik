@@ -1,0 +1,11 @@
+// vite.config.ts
+import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
+import eslintPlugin from "vite-plugin-eslint";
+var vite_config_default = defineConfig({
+  plugins: [preact(), eslintPlugin()]
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gJ3ZpdGUnO1xuaW1wb3J0IHByZWFjdCBmcm9tICdAcHJlYWN0L3ByZXNldC12aXRlJztcbmltcG9ydCBlc2xpbnRQbHVnaW4gZnJvbSAndml0ZS1wbHVnaW4tZXNsaW50JztcblxuLy8gaHR0cHM6Ly92aXRlanMuZGV2L2NvbmZpZy9cbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XG4gIHBsdWdpbnM6IFsgcHJlYWN0KCksIGVzbGludFBsdWdpbigpIF1cbn0pXG4iXSwKICAibWFwcGluZ3MiOiAiO0FBQUE7QUFDQTtBQUNBO0FBR0EsSUFBTyxzQkFBUSxhQUFhO0FBQUEsRUFDMUIsU0FBUyxDQUFFLE9BQU8sR0FBRyxhQUFhLENBQUU7QUFDdEMsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
