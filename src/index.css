@@ -76,14 +76,12 @@
     @apply xl:text-2xl lg:text-xl md:text-lg text-base; 
   }
 
-
-
   .text-slogan{
-    @apply lg:text-lg text-sm; 
+    @apply lg:text-lg sm:text-sm text-base; 
   }
 
   .text-icon{
-    @apply lg:text-base md:text-sm text-xs;
+    @apply lg:text-base md:text-sm sm:text-xs text-sm;
   }
 
   .text-btn{
@@ -208,38 +206,68 @@
 
   /* APP COMPONENT */
   .box-intro-element{
-    @apply fixed h-screen pointer-events-none inset-0 overflow-y-hidden;
+    @apply fixed z-50 h-screen pointer-events-none inset-0 overflow-y-hidden;
   }
   .box-intro{
     @apply h-1/2 opacity-0 transition-visible-out ease-out;
   }
 
   .intro-content{
-    @apply relative opacity-0 transition-opacity ease-out;
+    @apply h-screen relative opacity-0 transition-opacity ease-out;
+  }
+
+  .content-main{
+    @apply flex justify-center;
   }
 
   /* NAV COMPONENT */
   .nav{
-    @apply fixed inset-x-0 top-0 mx-[5%] px-10 py-3 lg:py-4 flex justify-between items-center border-skin-third border-b;
+    @apply fixed inset-x-0 top-0 mx-[5%] sm:mx-[6.5%] px-4 sm:px-8 py-3 lg:py-4 flex justify-between items-center border-skin-third border-b z-50;
   }
 
-  .nav::before{
+  .nav::after{
     content: '';
+    /* @apply absolute transition-height ease-in-out py-3 lg:py-4 -z-30 inset-0 w-full h-0 bg-skin-secondary; */
     @apply absolute transition-height ease-in-out -z-30 inset-0 w-full h-0 bg-skin-secondary;
+    @apply border-x border-skin-primary sm:border-0;
   }
 
-  .nav.active::before{
+  .nav.active::after{
     @apply h-full;
+  }
+
+  .burguer{
+    @apply w-8 h-full flex-col space-y-[.35rem] cursor-pointer;
+  }
+
+  .burguer.active .burguer-line:nth-child(1){
+    transform: rotate(45deg) translate(20%, .6rem);
+  }
+  .burguer.active .burguer-line:nth-child(2){
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  .burguer.active .burguer-line:nth-child(3){
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+  .burguer.active .burguer-line:nth-child(4){
+    transform: rotate(-45deg) translate(19%, -.5rem);
+  }
+
+  .burguer-line{
+    @apply h-0.5 bg-skin-primary transition-visible-in ease-in-out; 
   }
 
 
   /* MENU COMPONENT */
   .menu-list {
-    @apply ml-10 relative flex flex-col space-y-4;
+    @apply mx-[5%] sm:mr-0 px-3 pb-5 sm:ml-10 sm:p-0 relative flex flex-wrap sm:flex-col sm:space-y-4;
+    @apply border-b border-x border-skin-primary sm:border-0;
   }
 
   .menu-list > li {
-    @apply block;
+    @apply basis-[36%] mt-5 sm:basis-[0%] sm:mt-0 sm:block;
   }  
 
   .menu-list > li::before {
@@ -296,12 +324,146 @@
 
   /* HOME COMPONENT */
   .btn-show {
-    @apply cursor-default transition-width ease-in inline-flex overflow-hidden w-8;
+    @apply cursor-default transition-width ease-in inline-flex overflow-hidden w-7 lg:w-8;
   }
 
   .btn-show.active {
-    @apply w-full; 
+    @apply w-7 lg:w-full; 
   }
+
+  .home-svg-main{
+    @apply sm:-ml-4 md:ml-0 pl-0 md:pl-10 lg:pl-24 xl:pl-28 scale-[1.10] sm:scale-[1.5] xl:scale-[1.3]
+  }
+
+  .home-svg-main > svg{
+    @apply -mr-8 sm:mr-0 h-auto sm:h-[13rem] xl:h-auto;
+  }
+
+  .home-text-logo{
+    @apply text-6xl sm:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  .home-type-writer{
+    @apply flex items-center;
+    @apply mx-auto mt-6 sm:mt-4 sm:mx-0 lg:mt-6 w-[17rem] sm:w-[13.8rem] md:w-[15.5rem] lg:w-[19.7rem] xl:w-[24.3rem] p-1;
+  }
+
+  /* ABOUT COMPONENT */
+  .about-content{
+    @apply space-y-12;
+  }
+
+  .about-svg-frame{
+    @apply overflow-hidden -z-10;
+  }
+
+  .about-svg{
+    @apply border-l-0 border-b-0 border border-skin-primary;
+    @apply h-[15rem] w-5/6 lg:w-auto lg:h-auto ml-auto mr-0 lg:mr-14 lg:mb-0;
+  }
+
+  .about-svg-frame > svg{
+    @apply scale-[.65] md:scale-75 lg:scale-95 -mt-10 md:-mt-8 lg:-mt-2 -ml-36 md:-ml-28 lg:-ml-20 xl:-ml-12;
+  }
+
+  .about-svg-items {
+    @apply absolute -top-3 right-3; 
+  }
+
+  .about-box{
+    @apply relative;
+  }
+
+  .about-box-title{
+   @apply absolute -top-5 lg:-top-6 left-0 px-2 bg-skin-primary-sub
+  }
+
+  .about-box-list{
+    @apply flex items-center flex-wrap border border-skin-primary p-2;
+  }
+
+  .about-box-icon{
+    @apply border border-dashed border-skin-third m-1 px-1 flex items-center text-base;
+  }
+
+  .about-box-icon .bx {
+    @apply text-base md:text-lg;
+  }
+
+  /* PORTFOLIO COMPONENT */
+  .portfolio-nav{
+    @apply flex flex-wrap space-x-5 justify-center;
+  }
+
+  .portfolio-nav-item{
+    @apply relative px-2 transition ease-in;
+  }
+  
+  .portfolio-nav-item.active{
+    box-shadow: 4px 4px 0px 0px var(--color-bg-third);
+    @apply bg-skin-primary-sub text-skin-inverted;
+  }
+
+  .portfolio-nav-item::before{
+    content: '';
+    @apply absolute inset-0 -z-10 w-0 transition-width duration-300 ease-in bg-skin-third;
+  }
+
+  .portfolio-nav-item:hover{
+    @apply cursor-pointer text-skin-inverted;
+  }
+
+  .portfolio-nav-item:hover::before{
+    @apply w-full;
+  }
+
+  .portfolio-box{
+    @apply relative;
+  }
+
+  .portfolio-box-img{
+    @apply overflow-hidden relative;
+  }
+
+  .portfolio-box-img::before{
+    content: '';
+    @apply absolute inset-0 bg-skin-alpha; 
+    @apply w-0 transition-width duration-300 ease-in; 
+  }
+
+  .portfolio-box:hover .portfolio-box-img::before {
+     @apply w-full;
+  }
+
+  .portfolio-box-img > img{
+    @apply border border-skin-primary;
+  }
+
+  .portfolio-box-text{
+    @apply border-x border-b border-t-0 border-skin-primary p-2 space-y-1;
+  }
+
+  .portfolio-more{
+    @apply absolute flex inset-0;
+  }
+
+  .portfolio-more-btn {
+    @apply m-auto btn bg-skin-primary text-skin-inverted -translate-x-[230%] opacity-0;
+    @apply transition-visible-in ease-in;
+  }
+
+  .portfolio-box:hover .portfolio-more-btn {
+    @apply translate-x-0 opacity-100; 
+  }
+
+  .portfolio-icons {
+    @apply absolute top-0 right-0 flex flex-col space-y-1;
+  }
+
+  .portfolio-icons-btn{
+    @apply bg-skin-secondary px-1 border border-skin-primary;
+  }
+
 }
 
 @layer utilities {
@@ -336,5 +498,9 @@
 
   .transition-width {
     transition-property: width;
+  }
+
+  .transition-menu {
+    transition: transform .3s, opacity .1s;
   }
 }

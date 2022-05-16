@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'preact/hooks';
 
-import Assets from './../assets/Assets';
+import SVGComponent from './../assets/Assets';
 import BtnCV from './../components/require/BtnCV';
 
-import { useStringStep } from './../utils/UtilBasics'
+import { useStringStep } from './../utils/UtilBasics';
 
-const SVGComponent = ({name}) => {
-  const Component = Assets[name];
-  return <Component />
-};
-
-const wordArray = ['Creando optimas y nuevas soluciones. ',
+const wordArray = ['Creando nuevas soluciones. ',
                    'Basado en componentes dinámicos. ',
                    'Modular, Reactivo y Progresivo. ' ];
 
@@ -44,14 +39,14 @@ export default function TheHome() {
     return () => clearInterval(init);
   },[number]);
 
-  return <div className="grid grid-cols-2 gap-5 items-center">
-          
+  return <div className="h-full grid grid-cols-1 sm:grid-cols-2 gap-5 items-center">
           <figure className="relative">
-            <picture className="flex overflow-hidden pl-28 scale-[1.3]">
+
+            <picture className="home-svg-main flex overflow-hidden">
               <SVGComponent name="DevSVG" />
             </picture>
 
-            <figcaption className="absolute inset-y-0 ml-10 h-full w-[8rem] items-center justify-center flex flex-col space-y-3">
+            <figcaption className="absolute inset-y-0 g hidden md:flex -ml-4 lg:ml-6 xl:ml-10 h-full w-[8rem] items-center justify-center flex-col space-y-3">
 
               <button className={`btn btn-outline btn-show translate-x-3 ${classActive(number, 0)}`}>
                 <i class="ri-terminal-line ri-fw" />
@@ -73,26 +68,38 @@ export default function TheHome() {
                 <span className="ml-2"> Seguridad </span>
               </button>
 
-
             </figcaption>
+            <div className="absolute left-6 flex flex-col top-[30%] sm:hidden space-y-4"> 
+              <button className="btn-icon btn-outline">
+                <i className="ri-linkedin-line ri-fw" />
+              </button>
+                
+              <button className="btn-icon btn-outline">
+                <i className="ri-github-line ri-fw" />
+              </button>
+
+              <button className="btn-icon btn-outline">
+                <i className="ri-codepen-line ri-fw" />
+              </button>
+            </div>
           </figure>
 
-          <div className="text-skin-base-sub ml-4 xl:ml-8">
-            <h4 className="text-4xl lg:text-6xl xl:text-7xl  font-major">ANTIK</h4>
-            <div className="my-3 lg:my-4 xl:my-7">
+          <div className="text-skin-base-sub text-center sm:text-left ml-0 -mt-[2%] xs:-mt-[7%] sm:-ml-4 md:ml-1 lg:ml-8 xl:ml-8">
+            <h4 className="home-text-logo font-major">ANTIK</h4>
+            <div className="my-7 sm:my-4 lg:my-5 xl:my-7">
               <div className="text-slogan font-thin">
-                <p>Desarrollo de WebApps y <span className="bg-text">Aplicaciones Web</span>
+                <p>Desarrollo de <span className="inline-flex sm:hidden md:inline-flex">Sitios Web y </span> <span className="bg-text hidden xl:inline-flex"> Aplicaciones Web </span> 
+                <span className="bg-text inline-flex sm:hidden md:inline-flex xl:hidden"> Web Apps</span>
+                <span className="bg-text hidden sm:inline-flex md:hidden"> Aplicaciones Web</span>
                 </p>
                 <p>
-                  <span className="bg-text">
-                    progresivas</span>,
-                  multiplataforma para </p>
+                  <span className="bg-text"> progresivas</span>, <span className="inline-flex sm:hidden md:inline-flex">multiplataforma </span> para </p>
                 <p>diferentes <span className="bg-text">dispositivos</span>.</p>
               </div>
 
-              <div className="mt-6 w-[23rem] bg-skin-alpha p-1 text-skin-base">
+              <div className="home-type-writer bg-skin-alpha text-skin-base">
                 <i class="ri-arrow-right-s-line align-middle" />
-                <span className="animate-blink border-r-2 border-skin-third pl-1">{ letter }</span>
+                <span className="text-sm sm:text-xs lg:text-base animate-blink border-r-2 border-skin-third pl-1">{ letter }</span>
               </div>
             </div>
 
