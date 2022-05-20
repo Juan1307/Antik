@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'preact/hooks';
 
 import SVGComponent from './../assets/Assets';
-import BtnCV from './../components/require/BtnCV';
-
+import { BtnCV } from './../components/require/MiniReusable';
+// import BtnCV from './../components/require/BtnCV';
 import { useStringStep } from './../utils/UtilBasics';
 
 const wordArray = ['Creando nuevas soluciones. ',

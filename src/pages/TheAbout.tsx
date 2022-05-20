@@ -1,3 +1,4 @@
+import { TitleContent } from './../components/require/MiniReusable';
 import SVGComponent from './../assets/Assets';
 
 type BoxIconProps = {
@@ -40,12 +41,10 @@ export default function TheAbout() {
   return <div className="h-full about-content">
           <div className="items-center grid grid-cols-7 gap-0 lg:gap-10">
             <div className="col-span-7 sm:col-span-4">
+              
+              <TitleContent title="SOBRE MI" />
+
               <article className="mb-5 mt-3 lg:mb-8 sm:mt-0 space-y-3 text-justify">
-                <div className="justify-center flex w-full sm:hidden">
-                  <span className="font-bold underline underline-offset-4"> 
-                    <span className="text-lg">SOBRE MI</span> 
-                  </span>
-                </div>
                 <p className="first-letter:text-2xl first-letter:font-bold first-letter:mr-1">
                   Hola, soy Juan Cabanillas, Desarrollador de Aplicaciones Web de alta, media y pequeña demanda, aplicando soluciones solidas y utilizando modernas tecnologias.
                 </p>
@@ -56,16 +55,16 @@ export default function TheAbout() {
               </article>
               <div className="inline-grid sm:hidden md:inline-grid grid-cols-3 gap-2 w-full">
                 <div className="text-center">
-                  <p className="text-2xl">+ 4</p>
+                  <p className="text-2xl">+ 6</p>
                   <p>Aplicaciones</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl">+ 7</p>
-                  <p>Sitios Web</p>
+                  <p className="text-2xl">+ 4</p>
+                  <p>Plataformas</p>
                 </div>
 
                 <div className="text-center">
-                  <p className="text-2xl">+ 3</p>
+                  <p className="text-2xl">+ 8</p>
                   <p>Demo Apps</p>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import { Suspense, lazy } from 'preact/compat';
 
 // import Canvas from './components/Canvas';
 import LoaderPage from './components/LoaderPage';
-import BtnCV from './components/require/BtnCV';
+import { BtnCV } from './components/require/MiniReusable';
 import MenuBar from './pages/require/MenuBar';
 import NavBar from './pages/require/NavBar';
 import { useScrollY } from './utils/UtilBasics'

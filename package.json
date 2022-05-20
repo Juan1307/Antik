@@ -10,8 +10,7 @@
     "lint.fix": "eslint --fix src/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "preact": "^10.5.15",
-    "remixicon": "^2.5.0"
+    "preact": "^10.5.15"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.1.5",

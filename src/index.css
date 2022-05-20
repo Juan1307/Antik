@@ -37,7 +37,7 @@
 
     /* color optional */
     --color-bg-white: rgba(255, 255, 255, 1);
-    --color-bg-black: rgba(0, 0, 0, 1);
+    --color-bg-black: rgba(0, 0, 0, .5);
     --color-bg-alpha: rgba(0, 0, 0, .1);
     --color-bg-light: #FFDB63;
     --color-bg-light-sub: #FFF5D3;
@@ -392,11 +392,11 @@
 
   /* PORTFOLIO COMPONENT */
   .portfolio-nav{
-    @apply flex flex-wrap space-x-5 justify-center;
+    @apply flex flex-wrap space-x-3 sm:space-x-5 my-4 sm:my-5 lg:my-8 justify-center;
   }
 
   .portfolio-nav-item{
-    @apply relative px-2 transition ease-in;
+    @apply relative mb-4 sm:mb-0 px-2 transition ease-in;
   }
   
   .portfolio-nav-item.active{
@@ -418,6 +418,7 @@
   }
 
   .portfolio-box{
+    /* flex-flow: column; */
     @apply relative;
   }
 
@@ -440,7 +441,7 @@
   }
 
   .portfolio-box-text{
-    @apply border-x border-b border-t-0 border-skin-primary p-2 space-y-1;
+    @apply border-x bg-skin-secondary border-b border-t-0 border-skin-primary p-2 space-y-1;
   }
 
   .portfolio-more{
@@ -464,6 +465,26 @@
     @apply bg-skin-secondary px-1 border border-skin-primary;
   }
 
+  .portfolio-modal-bg{
+    /* @apply fixed z-[100] inset-0 bg-skin-black flex; */
+    @apply fixed z-[100] inset-0 bg-transparent flex pointer-events-none transition ease-in-out opacity-0;
+  }
+
+  .portfolio-modal-bg.active{
+    @apply bg-skin-black opacity-100 pointer-events-auto;
+  }
+
+  .portfolio-modal{
+    @apply relative m-auto;
+  }
+
+  .portfolio-modal-buttons {
+    @apply absolute top-[45%] -inset-x-5 flex justify-between; 
+  }
+
+  .portfolio-modal-btn{
+    @apply bg-skin-secondary border border-skin-primary px-2 py-1 text-xl; 
+  }
 }
 
 @layer utilities {
