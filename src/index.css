@@ -449,7 +449,7 @@
   }
 
   .portfolio-more-btn {
-    @apply m-auto btn bg-skin-primary text-skin-inverted -translate-x-[230%] opacity-0;
+    @apply m-auto px-2 py-1 bg-skin-primary text-skin-inverted -translate-x-[230%] opacity-0;
     @apply transition-visible-in ease-in;
   }
 
@@ -484,6 +484,23 @@
 
   .portfolio-modal-btn{
     @apply bg-skin-secondary border border-skin-primary px-2 py-1 text-xl; 
+  }
+
+  /* CONTACT COMPONENT */
+  .contact-input-group{
+    @apply flex flex-col space-y-1 my-1;
+  }
+
+  .input-form{
+    @apply text-skin-primary-sub;
+    @apply bg-skin-secondary px-2 py-1 border border-skin-primary;
+    @apply transition ease-in;
+    @apply focus:outline-none focus:ring-offset-2 focus:ring-1 focus:ring-skin-primary-sub;
+    @apply focus:bg-skin-third-sub;
+  }
+
+  .contact-img > svg {
+    @apply -ml-10 sm:-ml-24 sm:scale-50 md:-ml-20 md:scale-[.6] lg:scale-75 xl:ml-8 xl:scale-100;
   }
 }
 
