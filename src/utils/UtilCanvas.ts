@@ -95,9 +95,15 @@ const canvasColorsDefault: canvasColorsDefaultProps = {
   strokeColour: '#000000',
   strokeHoverColour: '#ff0000'
 };
-const checkAvailableColors = (config): canvasColorsDefaultProps => {
-  
-  const getColorStyle = (varStyle) => getComputedStyle(document.documentElement).getPropertyValue(`--col-${varStyle}`);
+const checkAvailableColors = (config, flag): canvasColorsDefaultProps => {
+  let currentElement;
+  currentElement = document.documentElement;
+
+  if(typeof flag === 'boolean') {
+    currentElement = flag ? document.documentElement : document.body;
+  }
+
+  const getColorStyle = (varStyle) => getComputedStyle(currentElement).getPropertyValue(`--col-${varStyle}`);
 
   const colorParticle = getColorStyle('particle');
   const colorStroke = getColorStyle('particle-stroke'); 
@@ -110,13 +116,13 @@ const checkAvailableColors = (config): canvasColorsDefaultProps => {
   return config;
 };
 
-const canvasInit = (canvas, config?: canvasConfigDefaultProps) => {
+const canvasInit = (canvas, theme, config?: canvasConfigDefaultProps) => {
   // config canvas
   let { opacity, numParticles, sizeMultiplier, width,
         connections, connectionDensity, noBounceH, noBounceV,
         speed, speedH, speedV, avoidMouse, hover } = checkAvailableValues({...config, canvasConfigDefault});
   // config colors
-  let { particleColour, strokeColour, strokeHoverColour } = checkAvailableColors(canvasColorsDefault);
+  let { particleColour, strokeColour, strokeHoverColour } = checkAvailableColors(canvasColorsDefault, theme);
 
   // console.log(configCanvas, configColors);
 

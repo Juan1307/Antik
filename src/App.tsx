@@ -1,19 +1,20 @@
-// import { useState, useEffect, useMemo } from 'preact/hooks';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect, useMemo } from 'preact/hooks';
+// import { useState, useEffect } from 'preact/hooks';
 import { Suspense, lazy } from 'preact/compat';
 
-// import Canvas from './components/Canvas';
-import LoaderPage from './components/LoaderPage';
+import Canvas from './components/Canvas';
+import Loader from './components/Loader';
 import { BtnCV } from './components/require/MiniReusable';
 import MenuBar from './pages/require/MenuBar';
 import NavBar from './pages/require/NavBar';
 import { useScrollY } from './utils/UtilBasics'
 
-
 const TheHome = lazy(() => import('./pages/TheHome'));
 const TheAbout = lazy(() => import('./pages/TheAbout'));
 const ThePortfolio = lazy(() => import('./pages/ThePortfolio'));
 const TheContact = lazy(() => import('./pages/TheContact'));
+
+const scrollToTop = (num) => window.scrollTo({top:num, behavior:'smooth'});
 
 const ButtonUp = () => {
   const scrollState = useScrollY(100);
@@ -22,11 +23,10 @@ const ButtonUp = () => {
   return <div className={`fixed right-5 sm:right-12 sm:right-[6%] bottom-[5%] sm:bottom-[7.5%] 
     transition-visible-in ease-in-out ${ classScroll(scrollState)}`}>
           <button className="px-3 py-1 text-icon btn-filled" 
-                  onClick={() => window.scrollTo({top:0, behavior:'smooth'}) }>
+                  onClick={() => scrollToTop(0) }>
             <i class="ri-arrow-up-s-line" />
           </button>
         </div>
-
 };
 
 export default function App() {
@@ -35,14 +35,14 @@ export default function App() {
   const currrentYear = new Date().getFullYear();
 
   const [ currentPath, setCurrentPath ] = useState('home');
-  const [ , setCurrentTheme ] = useState(null);
+  const [ currentTheme, setCurrentTheme ] = useState(null);
   const [ burger, setCurrentBurger ] = useState(null);
 
-  const handleCallbackPath = (path) => setCurrentPath(path);
+  const handleCallbackPath = (path) => (setCurrentPath(path), scrollToTop(0));
   const handleCallbackTheme = (value) => setCurrentTheme(value);
   const handleCallbackBurger = (value) => setCurrentBurger(value);
 
-  // const canvasMemorized = useMemo(() => <Canvas currentTheme={currentTheme} />, [currentTheme]);
+  const canvasMemorized = useMemo(() => <Canvas currentTheme={currentTheme} />, [currentTheme]);
 
   useEffect(() => setLayerBox(true), [layerBox]);
 
@@ -52,13 +52,13 @@ export default function App() {
   return (
     <main className="relative">
       <main className={`intro-content flex flex-col justify-between px-[5%] pt-[4rem] xs:pt-[3.6rem] sm:pt-[3.4rem] lg:pt-[4.4rem] ${layerBox && 'opacity-100'}`}>
-        {/*{ canvasMemorized }*/}
+        { canvasMemorized }
         <NavBar callback={handleCallbackTheme} subcallback={handleCallbackBurger} />
         {/*h-full sm:h-auto lg:*/}
         <section className={`content-main ${currentPath === 'home' && 'my-auto'} sm:my-auto h-auto`}>
           <div className="basis-12/12 sm:basis-[23%] md:basis-[20%] lg:basis-2/12" />
           <div className="basis-12/12 sm:basis-[77%] md:basis-[80%] lg:basis-10/12 p-[2%] h-full text-normal border-0 sm:border-l border-skin-primary">
-            <Suspense fallback={<LoaderPage />}>
+            <Suspense fallback={<Loader text="Cargando sección" add="loader-class" />}>
               { 
                 currentPath === 'home' ? <TheHome /> :  
                 currentPath === 'about' ? <TheAbout /> : 
@@ -87,7 +87,7 @@ export default function App() {
         </div>
 
         {/*{ inset-x-0 -top-20 ${ classBurguer(burguer) }}*/}
-        <div className={`fixed left-0 right-0 sm:left-[5%] md:left-[6%] lg:left-[7%] sm:right-auto sm:top-1/2 sm:-translate-y-1/2 transition-menu ease-in-out  bg-skin-secondary sm:bg-transparent -top-10 ${classBurger(burger)} `}>
+        <div className={`fixed left-[5%] right-[5%] sm:left-[5%] md:left-[6%] lg:left-[7%] sm:right-auto sm:top-1/2 sm:-translate-y-1/2 transition-menu ease-in-out bg-skin-secondary sm:bg-transparent -top-10 ${classBurger(burger)} `}>
           <MenuBar callback={handleCallbackPath} />
         </div>
 

@@ -42,17 +42,66 @@
     --color-bg-light: #FFDB63;
     --color-bg-light-sub: #FFF5D3;
 
-
-    --col-particle:#8f8f8f; 
-    --col-particle-stroke:#9f9f9f;
+    --col-particle:#afafaf; 
+    --col-particle-stroke:#afafaf;
     --col-particle-stroke-hover: #606060; 
   }
 
+  body.dark{
+     /* color text */
+    --color-text-base: #FFFFFF;
+    --color-text-base-sub: #FFFFFF;
+    --color-text-muted: #dfdfdf;
+    --color-text-inverted: #101010;
+    --color-text-inverted-sub: #707070;
+
+    /* color background */
+    --color-bg-primary: #FFFFFF;
+    --color-bg-primary-sub: #dfdfdf;
+    --color-bg-secondary: #101010;
+    --color-bg-secondary-sub: #202020;
+    --color-bg-third: #efefef;
+    --color-bg-third-sub: #707070;
+
+    /* color optional */
+    --color-bg-white: rgba(255, 255, 255, 1);
+    --color-bg-black: rgba(0, 0, 0, .5);
+    --color-bg-alpha: rgba(0, 0, 0, .1);
+    --color-bg-light: #FFDB63;
+    --color-bg-light-sub: #FFF5D3;
+
+
+    --col-particle:#606060; 
+    --col-particle-stroke:#606060;
+    --col-particle-stroke-hover: #9f9f9f; 
+  }
+
   canvas {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -100;
+  }
+
+  body::-webkit-scrollbar,
+  body.dark::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  body::-webkit-scrollbar-track,
+  body.dark::-webkit-scrollbar-track {
+      background: var(--color-bg-secondary);
+  }
+
+  body::-webkit-scrollbar-thumb,
+  body.dark::-webkit-scrollbar-thumb {
+      background-color: var(--color-bg-primary-sub);
+      border: 1px solid var(--color-bg-primary);
+  }
+
+  body::-webkit-scrollbar-thumb:hover,
+  body.dark::-webkit-scrollbar-thumb:hover {
+      background-color: var(--color-bg-third);
   }
 
 }
@@ -203,6 +252,10 @@
     @apply animate-slide bg-gradient-to-r from-skin-primary via-skin-via-third to-skin-primary bg-full; 
   }
 
+  .loader-class{
+    @apply h-[80vh] xs:h-[75vh] sm:h-auto;
+  }
+
 
   /* APP COMPONENT */
   .box-intro-element{
@@ -262,7 +315,7 @@
 
   /* MENU COMPONENT */
   .menu-list {
-    @apply mx-[5%] sm:mr-0 px-3 pb-5 sm:ml-10 sm:p-0 relative flex flex-wrap sm:flex-col sm:space-y-4;
+    @apply mx-0 sm:mr-0 px-3 pb-5 sm:ml-10 sm:p-0 relative flex flex-wrap sm:flex-col sm:space-y-4;
     @apply border-b border-x border-skin-primary sm:border-0;
   }
 
@@ -500,7 +553,7 @@
   }
 
   .contact-img > svg {
-    @apply -ml-10 sm:-ml-24 sm:scale-50 md:-ml-20 md:scale-[.6] lg:scale-75 xl:ml-8 xl:scale-100;
+    @apply -ml-5 md:-ml-2 lg:scale-[.9] xl:ml-8 xl:scale-100;
   }
 }
 

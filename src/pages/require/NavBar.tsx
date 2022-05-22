@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'preact/hooks';
+
 import { useScrollY, addClassTheme, checkLocalTheme } from './../../utils/UtilBasics'
+import { BtnSocial } from './../../components/require/MiniReusable';
 
 export default function NavBar({callback, subcallback}){
 
@@ -24,17 +26,7 @@ export default function NavBar({callback, subcallback}){
   return <div className={`nav ${(scrollState || burguer) && 'active'} `}>
     <div className="font-major text-3xl sm:text-xl lg:text-3xl"> ATK </div>
     <div className="hidden sm:inline-flex space-x-3"> 
-      <button className="btn-icon btn-outline">
-        <i className="ri-linkedin-line ri-fw" />
-      </button>
-        
-      <button className="btn-icon btn-outline">
-        <i className="ri-github-line ri-fw" />
-      </button>
-
-      <button className="btn-icon btn-outline">
-        <i className="ri-codepen-line ri-fw" />
-      </button>
+      <BtnSocial />
     </div>
     <div className={`fixed right-[9%] transition ${burguer ? 'top-24 opacity-100' : '-top-10 opacity-0 sm:opacity-100'}
 

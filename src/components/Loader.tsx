@@ -1,14 +1,20 @@
-import { useStringStep, addClassTheme, checkLocalTheme } from './../utils/UtilBasics';
+import { useStringStep } from './../utils/UtilBasics';
 
-export default function Loader () {
-  addClassTheme(checkLocalTheme()); //set local theme
-  
+type LoaderProps = {
+  text?:string,
+  add?:string
+};
+
+export default function Loader({text, add}: LoaderProps) {
   const { letter: points } = useStringStep('...', 400);
-
-  return <div className="h-screen flex bg-skin-secondary">
+  
+  const currentText =  text ?? 'Cargando página';
+  const currentClass = add ?? 'h-screen bg-skin-secondary';
+  
+  return <div className={` ${currentClass} flex`}>
           <div className="m-auto w-52 space-y-1">
             <div className="flex justify-between items-center text-normal text-skin-base-sub">
-              <span>Cargando página </span> 
+              <span>{ currentText }</span> 
               <span className="w-7">
                 <span className="h-4 font-black">
                   { points }

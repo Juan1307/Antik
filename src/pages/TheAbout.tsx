@@ -46,7 +46,7 @@ export default function TheAbout() {
 
               <article className="mb-5 mt-3 lg:mb-8 sm:mt-0 space-y-3 text-justify">
                 <p className="first-letter:text-2xl first-letter:font-bold first-letter:mr-1">
-                  Hola, soy Juan Cabanillas, Desarrollador de Aplicaciones Web de alta, media y pequeña demanda, aplicando soluciones solidas y utilizando modernas tecnologias.
+                  Hola, soy Juan Cabanillas, Desarrollador de Aplicaciones Web de alta, media y pequeña demanda, aplicando soluciones sólidas y utilizando modernas tecnologías.
                 </p>
 
                 <p>

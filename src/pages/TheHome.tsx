@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'preact/hooks';
 
 import SVGComponent from './../assets/Assets';
-import { BtnCV } from './../components/require/MiniReusable';
+import { BtnCV, BtnSocial } from './../components/require/MiniReusable';
 // import BtnCV from './../components/require/BtnCV';
 import { useStringStep } from './../utils/UtilBasics';
 
@@ -55,7 +55,7 @@ export default function TheHome() {
 
               <button className={`btn btn-outline btn-show -translate-x-6 ${classActive(number, 1)}`}>
                 <i class="ri-share-circle-line ri-fw" />
-                <span className="ml-2"> Integracion </span>
+                <span className="ml-2"> Integración </span>
               </button>
 
               <button className={`btn btn-outline btn-show -translate-x-2  ${classActive(number, 2)}`}>
@@ -70,17 +70,7 @@ export default function TheHome() {
 
             </figcaption>
             <div className="absolute left-6 flex flex-col top-[30%] sm:hidden space-y-4"> 
-              <button className="btn-icon btn-outline">
-                <i className="ri-linkedin-line ri-fw" />
-              </button>
-                
-              <button className="btn-icon btn-outline">
-                <i className="ri-github-line ri-fw" />
-              </button>
-
-              <button className="btn-icon btn-outline">
-                <i className="ri-codepen-line ri-fw" />
-              </button>
+              <BtnSocial />
             </div>
           </figure>
 

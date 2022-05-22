@@ -122,7 +122,7 @@ const CardModalContent = ({list}) => {
                 </button>
               </div>
 
-              <button className="text-skin-inverted absolute -top-8 right-0" 
+              <button className="text-white absolute -top-8 right-0" 
                       onClick={() => toggleModal()}>
                 <i className="ri-close-line ri-fw text-4xl" />
               </button>
