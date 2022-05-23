@@ -5,6 +5,7 @@ import eslintPlugin from 'vite-plugin-eslint';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [ preact(), eslintPlugin({ cache: false }) ],
+  base:'/Antik/',
   build:{
     outDir: 'docs', // folder output
     sourcemap: true
