@@ -73,6 +73,12 @@ const platforms = [
       address:'Modelo de Aplicaciones', 
       text:'Lenguaje de modelado para procesos de desarrollo.',
       src:'pla-staruml.JPG'
+    },
+    {
+      title:'Balsamiq', 
+      address:'Prototipado de Aplicaciones', 
+      text:'Diseño y prototipado de aplicaciones.',
+      src:'pla-balsamiq.JPG'
     }];
 
 const scripts = [
@@ -115,9 +121,16 @@ const scripts = [
     src:'src-galeria.JPG',
     icons:['html5','css3','javascript'],
     link:'https://codepen.io/antik133up/pen/VwPGKvr'
-  }
-
-];
+  },
+  {
+    title:'Web Portfolio',
+    address:'github',
+    text:'Landing Page UX de prueba.',
+    src:'src-portfolio.JPG',
+    icons:['html5','css3','javascript'],
+    link:'https://juan1307.github.io/WebPortfolio/'
+  }];
+  
 const PortfolioData = [ projects, platforms, scripts ];
 
 export default PortfolioData

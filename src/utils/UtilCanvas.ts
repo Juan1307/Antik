@@ -116,6 +116,8 @@ const checkAvailableColors = (config, flag): canvasColorsDefaultProps => {
   return config;
 };
 
+let requestAnimation;
+
 const canvasInit = (canvas, theme, config?: canvasConfigDefaultProps) => {
   // config canvas
   let { opacity, numParticles, sizeMultiplier, width,
@@ -303,9 +305,12 @@ const canvasInit = (canvas, theme, config?: canvasConfigDefaultProps) => {
         }
     }
 
+    if(requestAnimation) cancelAnimationFrame(requestAnimation);
+    
     // animation loop
     function animate(){
-        requestAnimationFrame(animate);
+        requestAnimation = requestAnimationFrame(animate);
+        
         canvasContext.clearRect(0, 0, innerWidth, innerHeight);
 
         for (let i = 0; i < particlesArray.length; i++){
@@ -315,7 +320,8 @@ const canvasInit = (canvas, theme, config?: canvasConfigDefaultProps) => {
             connect();
         }
     }
-        // resize event
+    
+    // resize event
     window.addEventListener('resize', function(){
         canvas.width = innerWidth;
         canvas.height = innerHeight;
