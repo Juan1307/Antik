@@ -4,5 +4,9 @@ import eslintPlugin from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [ preact(), eslintPlugin({ cache: false }) ]
+  plugins: [ preact(), eslintPlugin({ cache: false }) ],
+  build:{
+    outDir: 'docs', // folder output
+    sourcemap: true
+  }
 })
