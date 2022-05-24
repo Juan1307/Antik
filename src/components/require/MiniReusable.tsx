@@ -1,7 +1,10 @@
 const BtnCV = () => {
-  return  <button className="px-3 py-1 text-icon btn-filled">
-            <span>Descargar CV</span>
-          </button>
+  return  <div className="flex">
+            <a href="/Antik/CV-Juan-Cabanillas.pdf" target="_blank" rel="noreferrer noopener"
+              className="px-3 py-1 text-icon btn-filled">
+              <span>Descargar CV</span>
+            </a>
+          </div>
 };
 
 const BtnSocial = () => {

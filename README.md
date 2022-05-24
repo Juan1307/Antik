@@ -56,3 +56,25 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 ```
 
+### 3.- Config - PRODUCTION
+
+- Para el deploy en la carpeta ***docs*** tener en cuenta:
+```
+  // vite.config.ts
+
+  base:'/Antik/' //name project or repositori
+```
+
+```
+  // src/pages/ThePortfolio.tsx line 52 - 110 at img tag
+  
+  <img className="object-cover object-center w-full h-40" 
+                  src={`/Antik/imgs/${srcFile}`} alt={srcFile} />
+
+  // src/components/require/MiniReusable.tsx line 3
+
+  <a href="/Antik/CV-Juan-Cabanillas.pdf" target="_blank" rel="noreferrer noopener"
+      className="px-3 py-1 text-icon btn-filled">
+    <span>Descargar CV</span>
+  </a>
+```

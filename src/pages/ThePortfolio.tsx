@@ -13,6 +13,7 @@ type CardBoxItemProps = {
   link?:string
 };
 
+// const mode = (import.meta.env.MODE === 'development') ? '/' : '/Antik/';
 const CardIcons = ({data}) => {
     return <div className="portfolio-icons">
               {
@@ -50,7 +51,7 @@ const CardBoxItem = ({data, index}: { data: CardBoxItemProps, index:number }) =>
   return <div className="portfolio-box">
             <picture className="portfolio-box-img h-full w-full"> {/*h-full*/}
               <img className="object-cover object-center w-full h-40" 
-                  src={`/imgs/${srcFile}`} alt={srcFile} />
+                  src={`/Antik/imgs/${srcFile}`} alt={srcFile} />
               
               { btnExpand && <CardExpand index={index} /> }
               { icons && <CardIcons data={icons} /> }
@@ -108,7 +109,7 @@ const CardModalContent = ({list}) => {
               {/*{ modal, index }*/}
               <picture className="flex h-full w-full">
                 <img className={`h-full object-contain m-auto transition-visible-in ease-in-out scale-0 ${modal && 'scale-100'}`} 
-                    loading="lazy" src={`/imgs/${currentSrc}`} alt={currentSrc} />
+                    loading="lazy" src={`/Antik/imgs/${currentSrc}`} alt={currentSrc} />
               </picture>
 
               <div className="portfolio-modal-buttons">

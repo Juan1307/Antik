@@ -5,6 +5,8 @@ import './index.css';
 import { addClassTheme, checkLocalTheme } from './utils/UtilBasics';
 import Loader from './components/Loader';
 
+// console.log(import.meta.env.MODE); mode in deployment
+
 addClassTheme(checkLocalTheme()); //set local theme
 // console.log('hola mi pana')
 const App = lazy(() => import('./App'));
