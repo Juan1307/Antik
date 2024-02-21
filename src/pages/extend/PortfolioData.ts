@@ -19,7 +19,6 @@ const projects = [
       text:'Sistema de acceso y control para I.E.E y Directores.',
       src:['sys-ie-0.JPG','sys-ie-1.JPG','sys-ie-2.JPG','sys-ie-3.JPG'],
       icons:['php','vuejs', 'bootstrap', 'nodejs'],
-      link:'https://centrisys-antik.herokuapp.com/#/'
     },
     {
       title:'Audio App', 

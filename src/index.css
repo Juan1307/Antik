@@ -8,14 +8,14 @@
   @font-face {
     font-family: Ubuntu Mono;
     font-weight: 400;
-    src: local('Ubuntu Mono'), url(/fonts/UbuntuMono-Regular.ttf);
+    src: local('Ubuntu Mono'), url(/fonts/UbuntuMono-Regular.woff2),  format('woff2');
     font-display: swap;
   }
 
   @font-face {
     font-family: Major;
     font-weight: 400;
-    src: local('Major'), url(/fonts/MajorMonoDisplay-Regular.ttf);
+    src: local('Major'), url(/fonts/MajorMonoDisplay-Regular.woff2),  format('woff2');
     font-display: swap;
   }
 
