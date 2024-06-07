@@ -1,6 +1,6 @@
 const BtnCV = () => {
   return  <div className="flex justify-center sm:justify-start">
-            <a href="/Antik/CV-JUAN-ANTONI-CABANILLAS-CHUQUIRUNA.pdf" target="_blank" rel="noreferrer noopener"
+            <a href="/Antik/CV_JUAN_ANTONI_CABANILLAS_CHUQUIRUNA.pdf" target="_blank" rel="noreferrer noopener"
               className="px-3 py-1 text-icon btn-filled">
               <span>Descargar CV</span>
             </a>
